@@ -1,4 +1,10 @@
-const Main = () => {
+import { Routes, Route } from 'react-router-dom'
+import Home from './Home'
+import SignUp from './SignUp'
+
+const Main = ({
+  domain
+}) => {
   const mainStyles = {
     height: 'calc(100vh - 75px)',
     backgroundColor: 'rgba(50, 50, 50, 1)',
@@ -7,7 +13,10 @@ const Main = () => {
 
   return(
     <main style={mainStyles}>
-      <h1 style={{marginTop: '0'}}>Main</h1>
+      <Routes>
+        <Route path='/' element={<Home />} />
+        <Route path='/signup' element={<SignUp domain={domain} />} />
+      </Routes>
     </main>
   )
 }
