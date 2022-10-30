@@ -12,13 +12,11 @@ const LogIn = ({
 
   const handleSubmit = e => {
     e.preventDefault()
-    console.log('handleSubmit')
     axios.post(`${domain}/sessions/create`, {
       email: email,
       password: password
     })
     .then(response => {
-      console.log(response.data)
       logIn(response.data)
       navigate('/')
     })

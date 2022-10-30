@@ -18,7 +18,7 @@ const Nav = ({
   if (loggedIn) {
     sessionsLinks =
     <div id='sessions-links' style={{display: 'flex', gap: '5px'}}>
-      <Link to='#'>{currentUser.handle}</Link>
+      <Link to={`users/${currentUser.id}`}>{currentUser.handle}</Link>
       <Link to='#' onClick={logOut}>Log out</Link>
     </div>
   } else {

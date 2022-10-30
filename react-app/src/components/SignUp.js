@@ -14,7 +14,6 @@ const SignUp = ({
 
   const handleSubmit = e => {
     e.preventDefault()
-    console.log('handleSubmit')
     axios.post(`${domain}/users/create`, {
       user: {
         handle: handle,
@@ -24,7 +23,6 @@ const SignUp = ({
       }
     })
     .then(response => {
-      console.log(response.data)
       logIn(response.data)
       navigate('/')
     })

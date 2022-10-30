@@ -26,14 +26,12 @@ const App = () => {
   }
 
   useEffect(() => {
-    let cookie = Cookies.get('persistenceToken')
-    if (cookie) {
-      console.log(cookie)
+    let token = Cookies.get('persistenceToken')
+    if (token) {
       axios.post(`${domain}/sessions/logged_in`, {
-        persistence_token: cookie
+        persistence_token: token
       })
       .then(response => {
-        console.log(response.data)
         logIn(response.data)
       })
       .catch(error => console.log(error))
