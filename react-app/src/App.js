@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import axios from 'axios'
+import Cookies from 'js-cookie'
 import Nav from './components/Nav'
 import Main from './components/Main'
 import Footer from './components/Footer'
@@ -12,10 +13,22 @@ const App = () => {
   const logIn = data => {
     setCurrentUser(data.user)
     setLoggedIn(data.logged_in)
+    Cookies.set('persistenceToken', data.user.persistence_token, { expires: 14 })
   }
 
   useEffect(() => {
-    // Check for persistence token here!
+    let cookie = Cookies.get('persistenceToken')
+    if (cookie) {
+      console.log(cookie)
+      axios.post(`${domain}/sessions/logged_in`, {
+        persistence_token: cookie
+      })
+      .then(response => {
+        console.log(response.data)
+        logIn(response.data)
+      })
+      .catch(error => console.log(error))
+    }
   }, [])
 
   return(
