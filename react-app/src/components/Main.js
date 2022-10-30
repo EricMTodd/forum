@@ -1,9 +1,11 @@
 import { Routes, Route } from 'react-router-dom'
 import Home from './Home'
 import SignUp from './SignUp'
+import LogIn from './LogIn'
 
 const Main = ({
-  domain
+  domain,
+  logIn
 }) => {
   const mainStyles = {
     height: 'calc(100vh - 75px)',
@@ -15,7 +17,8 @@ const Main = ({
     <main style={mainStyles}>
       <Routes>
         <Route path='/' element={<Home />} />
-        <Route path='/signup' element={<SignUp domain={domain} />} />
+        <Route path='/signup' element={<SignUp domain={domain} logIn={logIn} />} />
+        <Route path='/login' element={<LogIn domain={domain} logIn={logIn} />} />
       </Routes>
     </main>
   )

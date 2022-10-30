@@ -1,9 +1,12 @@
 import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
 
 const SignUp = ({
-  domain
+  domain,
+  logIn
 }) => {
+  const navigate = useNavigate()
   const [handle, setHandle] = useState('')
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
@@ -22,6 +25,8 @@ const SignUp = ({
     })
     .then(response => {
       console.log(response.data)
+      logIn(response.data)
+      navigate('/')
     })
     .catch(error => console.log(error))
   }
