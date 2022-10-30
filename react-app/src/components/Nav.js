@@ -48,13 +48,13 @@ const Nav = ({
   let sessionsLinks
   if (loggedIn) {
     sessionsLinks =
-    <div id='sessions-links' style={{display: 'flex', gap: '15px'}}>
+    <div id='sessions-links' style={{display: 'flex', gap: '15px', alignItems: 'center'}}>
       <Link to={`users/${currentUser.id}`}>{currentUser.handle}</Link>
       <button type='button' onClick={logOut}style={buttonStyles} onMouseEnter={buttonHoverEffect} onMouseLeave={buttonHoverEffect} onMouseDown={buttonClickEffect} onMouseUp={buttonClickEffect}>Log out</button>
     </div>
   } else {
     sessionsLinks =
-    <div id='sessions-links' style={{display: 'flex', gap: '15px'}}>
+    <div id='sessions-links' style={{display: 'flex', gap: '15px', alignItems: 'center'}}>
       <Link to='/login'>Log in</Link>
       <Link to='/signup' style={buttonStyles} onMouseEnter={buttonHoverEffect} onMouseLeave={buttonHoverEffect} onMouseDown={buttonClickEffect} onMouseUp={buttonClickEffect}>Sign up</Link>
     </div>
