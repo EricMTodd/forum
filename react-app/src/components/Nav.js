@@ -2,7 +2,8 @@ import { Link } from 'react-router-dom'
 
 const Nav = ({
   loggedIn,
-  currentUser
+  currentUser,
+  logOut
 }) => {
   const navStyles = {
     backgroundColor: 'black',
@@ -18,7 +19,7 @@ const Nav = ({
     sessionsLinks =
     <div id='sessions-links' style={{display: 'flex', gap: '5px'}}>
       <Link to='#'>{currentUser.handle}</Link>
-      <Link to='#'>Log out</Link>
+      <Link to='#' onClick={logOut}>Log out</Link>
     </div>
   } else {
     sessionsLinks =
