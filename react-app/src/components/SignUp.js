@@ -25,8 +25,8 @@ const SignUp = ({
     })
     .then(response => {
       console.log(response.data)
-      logIn(response.data)
-      navigate('/')
+      // logIn(response.data)
+      // navigate('/')
     })
     .catch(error => console.log(error))
   }

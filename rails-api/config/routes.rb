@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
   # Sessions routes
-  get 'sessions/logged_in', to: 'sessions#logged_in'
   post 'sessions/create', to: 'sessions#create'
 
   # Users routes

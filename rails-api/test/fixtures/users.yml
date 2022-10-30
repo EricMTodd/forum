@@ -4,8 +4,10 @@ one:
   handle: MyString
   email: MyString
   password_digest: <%= BCrypt::Password.create("secret") %>
+  persistence_token: MyString
 
 two:
   handle: MyString
   email: MyString
   password_digest: <%= BCrypt::Password.create("secret") %>
+  persistence_token: MyString

@@ -1,16 +1,21 @@
+include SecureRandom
+
 class UsersController < ApplicationController
 
   def create
-    user = User.create(user_params)
-
-    if user.save
+    user = User.new(user_params)
+    user.persistence_token = SecureRandom.alphanumeric(32)
+    
+    if user.save!
       render json: {
-        message: 'User created',
+        message: 'User created.',
+        logged_in: true,
         user: user
       }
     else
       render json: {
         message: 'Failed to create user!',
+        logged_in: false,
         user: {}
       }
     end

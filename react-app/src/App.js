@@ -15,11 +15,7 @@ const App = () => {
   }
 
   useEffect(() => {
-    axios.get(`${domain}/sessions/logged_in`)
-    .then(response => {
-      console.log(response.data)
-    })
-    .catch(error => console.log(error))
+    // Check for persistence token here!
   }, [])
 
   return(
