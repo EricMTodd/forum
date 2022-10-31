@@ -3,8 +3,13 @@
   color: white;
 }
 
+::-webkit-scrollbar {
+  display: none;
+}
+
 body {
   margin: 0 auto;
+  background-color: rgba(50, 50, 50, 1);
 }
 
 button, input, textarea {
