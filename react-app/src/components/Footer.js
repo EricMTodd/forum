@@ -8,9 +8,21 @@ const Footer = () => {
     gap: '5px'
   }
 
+  const linkStyles = {
+    textDecoration: 'none'
+  }
+
+  const linkHoverEffect = e => {
+    if (e.target.style.textDecoration !== 'underline') {
+      e.target.style.textDecoration = 'underline'
+    } else {
+      e.target.style.textDecoration = 'none'
+    }
+  }
+
   return(
     <footer style={footerStyles}>
-      Made with ❤️ <a href='https://ericmtodd.herokuapp.com'>Eric M. Todd</a>
+      Made with ❤️ <a href='https://ericmtodd.herokuapp.com' style={linkStyles} onMouseEnter={linkHoverEffect} onMouseLeave={linkHoverEffect}>Eric M. Todd</a>
     </footer>
   )
 }

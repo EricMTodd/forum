@@ -25,6 +25,10 @@ const Nav = ({
     textDecoration: 'none'
   }
 
+  const linkStyles = {
+    textDecoration: 'none'
+  }
+
   const buttonHoverEffect = e => {
     if (e.target.style.backgroundColor !== 'blue') {
       e.target.style.backgroundColor = 'blue'
@@ -45,17 +49,25 @@ const Nav = ({
     }
   }
 
+  const linkHoverEffect = e => {
+    if (e.target.style.textDecoration !== 'underline') {
+      e.target.style.textDecoration = 'underline'
+    } else {
+      e.target.style.textDecoration = 'none'
+    }
+  }
+
   let sessionsLinks
   if (loggedIn) {
     sessionsLinks =
     <div id='sessions-links' style={{display: 'flex', gap: '15px', alignItems: 'center'}}>
-      <Link to={`users/${currentUser.id}`}>{currentUser.handle}</Link>
+      <Link to={`users/${currentUser.id}`} style={linkStyles} onMouseEnter={linkHoverEffect} onMouseLeave={linkHoverEffect}>{currentUser.handle}</Link>
       <button type='button' onClick={logOut}style={buttonStyles} onMouseEnter={buttonHoverEffect} onMouseLeave={buttonHoverEffect} onMouseDown={buttonClickEffect} onMouseUp={buttonClickEffect}>Log out</button>
     </div>
   } else {
     sessionsLinks =
     <div id='sessions-links' style={{display: 'flex', gap: '15px', alignItems: 'center'}}>
-      <Link to='/login'>Log in</Link>
+      <Link to='/login' style={linkStyles} onMouseEnter={linkHoverEffect} onMouseLeave={linkHoverEffect}>Log in</Link>
       <Link to='/signup' style={buttonStyles} onMouseEnter={buttonHoverEffect} onMouseLeave={buttonHoverEffect} onMouseDown={buttonClickEffect} onMouseUp={buttonClickEffect}>Sign up</Link>
     </div>
   }
@@ -63,7 +75,7 @@ const Nav = ({
   return(
     <nav style={navStyles}>
       <div id='navigation-links'>
-        <Link to='/'>Home</Link>
+        <Link to='/' style={linkStyles} onMouseEnter={linkHoverEffect} onMouseLeave={linkHoverEffect}>Home</Link>
       </div>
       {sessionsLinks}
     </nav>
