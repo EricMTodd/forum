@@ -22,7 +22,7 @@ const Footer = () => {
 
   return(
     <footer style={footerStyles}>
-      Made with ❤️ <a href='https://ericmtodd.herokuapp.com' style={linkStyles} onMouseEnter={linkHoverEffect} onMouseLeave={linkHoverEffect}>Eric M. Todd</a>
+      Made with ❤️ <a href='https://ericmtodd.herokuapp.com' target='_blank' style={linkStyles} onMouseEnter={linkHoverEffect} onMouseLeave={linkHoverEffect}>Eric M. Todd</a>
     </footer>
   )
 }
