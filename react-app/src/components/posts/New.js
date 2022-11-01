@@ -45,10 +45,10 @@ const New = ({
   // METHODS
   const handleSubmit = e => {
     e.preventDefault()
-    console.log('handleSubmit')
     axios.post(`${domain}/posts/create`, {
       post: {
-        author_id: currentUser.id,
+        user_handle: currentUser.handle,
+        user_id: currentUser.id,
         title: title,
         body: body
       }

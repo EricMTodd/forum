@@ -16,11 +16,12 @@ const Index = ({
 
   const postStyles = {
     backgroundColor: 'rgba(50, 50, 50, 1)',
-    padding: '25px 0 25px 25px',
+    padding: '25px',
     margin: '15px 0 15px 0',
     borderRadius: '5px',
-    fontWeight: 'bold',
-    fontSize: '24px'
+    display: 'flex',
+    justifyContent: 'space-between',
+    alignItems: 'center'
   }
 
   useEffect(() => {
@@ -43,24 +44,12 @@ const Index = ({
     }
   }
 
-  const postEnterEffect = e => {
-    e.target.style.backgroundColor = 'rgba(100, 100, 100, 1)' 
-  }
-
-  const postLeaveEffect = e => {
-    e.target.style.backgroundColor = 'rgba(50, 50, 50, 1)'
-  }
-
-  const navigateToPost = id => {
-    navigate(`/posts/${id}`)
-  }
-
   return(
     <div id='posts-index-container' style={containerStyles}>
       <h1 style={{marginBottom: '0'}}>Forum Posts</h1>
-      {loggedIn && <Link to='posts/new' style={{textDecoration: 'none'}} onMouseEnter={linkHoverEffect} onMouseLeave={linkHoverEffect}>New Post</Link>}
-      <div id='all-posts'>
-        {posts.map(post => <div key={post.id} id={`post-${post.id}`} style={postStyles} onMouseEnter={postEnterEffect} onMouseLeave={postLeaveEffect} onClick={() => navigateToPost(post.id)}>{post.title}</div>)}
+      {loggedIn && <Link to='posts/new' style={{textDecoration: 'none', width: '70px'}} onMouseEnter={linkHoverEffect} onMouseLeave={linkHoverEffect}>New Post</Link>}
+      <div id='posts-container'>
+        {posts.map(post => <div key={post.id} id={`post-${post.id}`} style={postStyles}><Link to={`/posts/${post.id}`} style={{textDecoration: 'none', fontWeight: 'bold', fontSize: '24px'}} onMouseEnter={linkHoverEffect} onMouseLeave={linkHoverEffect}>{post.title}</Link><Link to={`/users/${post.user_id}`} style={{textDecoration: 'none'}} onMouseEnter={linkHoverEffect} onMouseLeave={linkHoverEffect}>{post.user_handle}</Link></div>)}
       </div>
     </div>
   )

@@ -4,17 +4,20 @@ class UsersController < ApplicationController
 
   def show
     user = User.find_by(id: params[:id])
+    posts = user.posts
 
-    if user
+    if user && posts
       render json: {
         message: 'User retrieved.',
         user: user,
+        posts: posts,
         successful: true
       }
     else
       render json: {
         message: 'Failed to retrieve user!',
-        user: user,
+        user: {},
+        posts: {},
         successful: false
       }
     end
