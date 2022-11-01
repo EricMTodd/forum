@@ -5,6 +5,7 @@ import SignUp from './auth/SignUp'
 import LogIn from './auth/LogIn'
 import { Show as ShowUser } from './users/Show'
 import { New as NewPost } from './posts/New'
+import { Index as PostsIndex } from './posts/Index'
 
 const Main = ({
   domain,
@@ -24,7 +25,7 @@ const Main = ({
   if (loggedIn) {
     routes =
     <Routes>
-      <Route path='/' element={<Home />} />
+      <Route path='/' element={<PostsIndex loggedIn={loggedIn} />} />
       <Route path='/posts/new' element={<NewPost domain={domain} currentUser={currentUser} />} />
       <Route path='/users/:id' element={<ShowUser domain={domain} />} />
       <Route path='*' element={<NotFound />} />
@@ -32,7 +33,7 @@ const Main = ({
   } else {
     routes =
     <Routes>
-      <Route path='/' element={<Home />} />
+      <Route path='/' element={<PostsIndex loggedIn={loggedIn} />} />
       <Route path='/signup' element={<SignUp domain={domain} logIn={logIn} />} />
       <Route path='/login' element={<LogIn domain={domain} logIn={logIn} />} />
       <Route path='/users/:id' element={<ShowUser domain={domain} />} />
