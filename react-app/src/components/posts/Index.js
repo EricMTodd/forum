@@ -9,12 +9,18 @@ const Index = ({
   const navigate = useNavigate()
   const [posts, setPosts] = useState([])
 
+  const containerStyles = {
+    display: 'flex',
+    flexDirection: 'column'
+  }
+
   const postStyles = {
-    width: '100%',
     backgroundColor: 'rgba(50, 50, 50, 1)',
-    padding: '25px 0 25px 0',
+    padding: '25px 0 25px 25px',
     margin: '15px 0 15px 0',
-    borderRadius: '5px'
+    borderRadius: '5px',
+    fontWeight: 'bold',
+    fontSize: '24px'
   }
 
   useEffect(() => {
@@ -50,11 +56,11 @@ const Index = ({
   }
 
   return(
-    <div id='posts-index'>
+    <div id='posts-index-container' style={containerStyles}>
       <h1 style={{marginTop: '0'}}>Forum Posts</h1>
       {loggedIn && <Link to='posts/new' style={{textDecoration: 'none'}} onMouseEnter={linkHoverEffect} onMouseLeave={linkHoverEffect}>New Post</Link>}
       <div id='all-posts'>
-        {posts.map(post => <div key={post.id} id={`post-${post.id}`} style={postStyles} onMouseEnter={postEnterEffect} onMouseLeave={postLeaveEffect} onClick={() => navigateToPost(post.id)}><strong style={{marginLeft: '50px', fontSize: '24px'}}>{post.title}</strong></div>)}
+        {posts.map(post => <div key={post.id} id={`post-${post.id}`} style={postStyles} onMouseEnter={postEnterEffect} onMouseLeave={postLeaveEffect} onClick={() => navigateToPost(post.id)}>{post.title}</div>)}
       </div>
     </div>
   )
