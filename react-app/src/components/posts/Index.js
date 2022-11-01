@@ -19,7 +19,7 @@ const Index = ({
       }
     })
     .catch(error => console.log(error))
-  })
+  }, [])
 
   return(
     <div id='posts-index'>
