@@ -1,5 +1,4 @@
 import { Routes, Route } from 'react-router-dom'
-import Home from './Home'
 import NotFound from './NotFound'
 import SignUp from './auth/SignUp'
 import LogIn from './auth/LogIn'
@@ -17,7 +16,7 @@ const Main = ({
 
   const mainStyles = {
     height: 'calc(100vh - 75px)',
-    backgroundColor: 'rgba(50, 50, 50, 1)',
+    backgroundColor: 'black',
     padding: '0 16.5% 0 16.5%',
     overflowX: 'scroll'
   }

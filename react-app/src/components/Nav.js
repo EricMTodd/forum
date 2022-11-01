@@ -7,7 +7,7 @@ const Nav = ({
 }) => {
 
   const navStyles = {
-    backgroundColor: 'black',
+    backgroundColor: 'rgba(50, 50, 50, 1)',
     height: '50px',
     display: 'flex',
     alignItems: 'center',

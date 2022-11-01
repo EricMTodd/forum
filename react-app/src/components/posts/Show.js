@@ -18,6 +18,7 @@ const Show = ({
         navigate('/404')
       }
     })
+    .catch(error => console.log(error))
   }, [params.id])
 
   return(

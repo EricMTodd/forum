@@ -1,6 +1,6 @@
 const Footer = () => {
   const footerStyles = {
-    backgroundColor: 'black',
+    backgroundColor: 'rgba(50, 50, 50, 1)',
     height: '25px',
     display: 'flex',
     alignItems: 'center',
