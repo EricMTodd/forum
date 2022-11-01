@@ -23,7 +23,7 @@ const Show = ({
 
   return(
     <div className='show-post'>
-      <h1 style={{marginTop: '0'}}>{post.title}</h1>
+      <h1>{post.title}</h1>
       <p>{post.body}</p>
     </div>
   )

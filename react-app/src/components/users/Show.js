@@ -23,7 +23,7 @@ const Show = ({
 
   return(
     <div className='show-user'>
-      <h1 style={{marginTop: '0'}}>{user.handle}</h1>
+      <h1>{user.handle}</h1>
     </div>
   )
 }

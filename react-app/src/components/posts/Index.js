@@ -57,7 +57,7 @@ const Index = ({
 
   return(
     <div id='posts-index-container' style={containerStyles}>
-      <h1 style={{marginTop: '0'}}>Forum Posts</h1>
+      <h1 style={{marginBottom: '0'}}>Forum Posts</h1>
       {loggedIn && <Link to='posts/new' style={{textDecoration: 'none'}} onMouseEnter={linkHoverEffect} onMouseLeave={linkHoverEffect}>New Post</Link>}
       <div id='all-posts'>
         {posts.map(post => <div key={post.id} id={`post-${post.id}`} style={postStyles} onMouseEnter={postEnterEffect} onMouseLeave={postLeaveEffect} onClick={() => navigateToPost(post.id)}>{post.title}</div>)}
