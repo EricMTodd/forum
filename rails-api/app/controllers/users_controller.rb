@@ -8,12 +8,14 @@ class UsersController < ApplicationController
     if user
       render json: {
         message: 'User retrieved.',
-        user: user
+        user: user,
+        successful: true
       }
     else
       render json: {
         message: 'Failed to retrieve user!',
-        user: user
+        user: user,
+        successful: false
       }
     end
   end
@@ -26,13 +28,15 @@ class UsersController < ApplicationController
       render json: {
         message: 'User created.',
         logged_in: true,
-        user: user
+        user: user,
+        successful: true
       }
     else
       render json: {
         message: 'Failed to create user!',
         logged_in: false,
-        user: {}
+        user: {},
+        successful: false
       }
     end
   end

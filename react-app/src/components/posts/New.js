@@ -54,7 +54,9 @@ const New = ({
       }
     })
     .then(response => {
-      navigate('/')
+      if (response.data.successful) {
+        navigate(`/posts/${response.data.post.id}`)
+      }
     })
     .catch(error => console.log(error))
   }

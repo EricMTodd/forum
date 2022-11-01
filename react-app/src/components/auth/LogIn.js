@@ -50,8 +50,8 @@ const LogIn = ({
       password: password
     })
     .then(response => {
-      logIn(response.data)
-      if (response.data.logged_in) {
+      if (response.data.successful) {
+        logIn(response.data)
         navigate('/')
       }
     })

@@ -7,23 +7,23 @@ const Show = ({
 }) => {
   const navigate = useNavigate()
   const params = useParams()
-  const [user, setUser] = useState({})
+  const [post, setPost] = useState({})
 
   useEffect(() => {
-    axios.get(`${domain}/users/${params.id}`)
+    axios.get(`${domain}/posts/${params.id}`)
     .then(response => {
       if (response.data.successful) {
-        setUser(response.data.user)
+        setPost(response.data.post)
       } else {
         navigate('/404')
       }
     })
-    .catch(error => console.log(error))
   }, [params.id])
 
   return(
-    <div className='show-user'>
-      <h1 style={{marginTop: '0'}}>{user.handle}</h1>
+    <div className='show-post'>
+      <h1 style={{marginTop: '0'}}>{post.title}</h1>
+      <p>{post.body}</p>
     </div>
   )
 }

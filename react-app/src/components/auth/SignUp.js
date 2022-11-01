@@ -57,7 +57,7 @@ const SignUp = ({
     })
     .then(response => {
       logIn(response.data)
-      if (response.data.logged_in) {
+      if (response.data.successful) {
         navigate('/')
       }
     })

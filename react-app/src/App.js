@@ -32,7 +32,9 @@ const App = () => {
         persistence_token: token
       })
       .then(response => {
-        logIn(response.data)
+        if (response.data.successful) {
+          logIn(response.data)
+        }
       })
       .catch(error => console.log(error))
     }
