@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import { Link, useNavigate, useParams } from 'react-router-dom'
 import axios from 'axios'
 import { New as NewComment } from '../comments/New'
+import { Show as ShowComment } from '../comments/Show'
 
 const Show = ({
   domain,
@@ -12,6 +13,7 @@ const Show = ({
   const params = useParams()
   const [post, setPost] = useState({})
   const [comments, setComments] = useState([])
+  const topLevelComments = comments.filter(comment => comment.comment_id === null)
 
   const containerStyles = {
     backgroundColor: 'rgba(50, 50, 50, 1)',
@@ -47,7 +49,9 @@ const Show = ({
       <Link to={`/users/${post.user_id}`} style={{textDecoration: 'none'}} onMouseEnter={linkHoverEffect} onMouseLeave={linkHoverEffect}>{post.user_handle}</Link>
       <p>{post.body}</p>
       { loggedIn && <NewComment domain={domain} currentUser={currentUser} post={post} /> }
-      { comments.map(comment => <p key={comment.id} id={`comment-${comment.id}`} style={{borderLeft: '2px solid rgba(100, 100, 100, 1)', paddingLeft: '5px'}}>{comment.body}</p>) }
+      <ul>
+        { topLevelComments.map(comment => <li key={comment.id}><ShowComment comments={comments} parentComment={comment} /></li>) }
+      </ul>
     </div>
   )
 }

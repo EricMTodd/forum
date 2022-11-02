@@ -15,3 +15,7 @@ body {
 button, input, textarea {
   color: black;
 }
+
+li {
+  list-style: none;
+}
