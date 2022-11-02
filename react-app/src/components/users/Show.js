@@ -30,7 +30,7 @@ const Show = ({
     .then(response => {
       if (response.data.successful) {
         setUser(response.data.user)
-        setPosts(response.data.posts)
+        setPosts(response.data.posts.reverse())
       } else {
         navigate('/404')
       }
