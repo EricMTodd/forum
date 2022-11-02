@@ -28,13 +28,13 @@ const Main = ({
       <Route path='/' element={<PostsIndex domain={domain} loggedIn={loggedIn} />} />
       <Route path='/posts/new' element={<NewPost domain={domain} currentUser={currentUser} />} />
       <Route path='/users/:id' element={<ShowUser domain={domain} />} />
-      <Route path='/posts/:id' element={<ShowPost domain={domain} />} />
+      <Route path='/posts/:id' element={<ShowPost domain={domain} loggedIn={loggedIn} currentUser={currentUser} />} />
       <Route path='*' element={<NotFound />} />
     </Routes>
   } else {
     routes =
     <Routes>
-      <Route path='/' element={<PostsIndex domain={domain} loggedIn={loggedIn} />} />
+      <Route path='/' element={<PostsIndex domain={domain} />} />
       <Route path='/signup' element={<SignUp domain={domain} logIn={logIn} />} />
       <Route path='/login' element={<LogIn domain={domain} logIn={logIn} />} />
       <Route path='/users/:id' element={<ShowUser domain={domain} />} />

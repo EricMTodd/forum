@@ -20,17 +20,20 @@ class PostsController < ApplicationController
 
   def show
     post = Post.find_by(id: params[:id])
+    comments = post.comments
 
     if post
       render json: {
         message: 'Post retrieved.',
         post: post,
+        comments: comments,
         successful: true
       }
     else
       render json: {
         message: 'Failed to retrieve post!',
         post: {},
+        comments: {},
         successful: false
       }
     end

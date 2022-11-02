@@ -21,7 +21,7 @@ const SignUp = ({
   }
 
   const formStyles = {
-    backgroundColor: 'rgba(100, 100, 100, 1)',
+    backgroundColor: 'rgba(50, 50, 50, 1)',
     marginTop: '50px',
     width: '40%',
     padding: '50px',

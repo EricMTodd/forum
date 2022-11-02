@@ -6,7 +6,7 @@ class UsersController < ApplicationController
     user = User.find_by(id: params[:id])
     posts = user.posts
 
-    if user && posts
+    if user
       render json: {
         message: 'User retrieved.',
         user: user,
