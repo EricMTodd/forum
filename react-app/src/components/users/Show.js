@@ -51,7 +51,7 @@ const Show = ({
       <h1>{user.handle}</h1>
       <h2>Posts</h2>
       <div id={`user-${user.id}-posts-container`}>
-        {posts.map(post => <div id={`post-${post.id}`} style={postStyles}><Link to={`/posts/${post.id}`} style={{textDecoration: 'none', fontWeight: 'bold', fontSize: '24px'}} onMouseEnter={linkHoverEffect} onMouseLeave={linkHoverEffect}>{post.title}</Link></div>)}
+        {posts.map(post => <div key={post.id} id={`post-${post.id}`} style={postStyles}><Link to={`/posts/${post.id}`} style={{textDecoration: 'none', fontWeight: 'bold', fontSize: '24px'}} onMouseEnter={linkHoverEffect} onMouseLeave={linkHoverEffect}>{post.title}</Link></div>)}
       </div>
     </div>
   )
