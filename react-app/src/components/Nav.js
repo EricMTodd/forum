@@ -12,7 +12,8 @@ const Nav = ({
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'space-between',
-    padding: '0 15px 0 15px'
+    padding: '0 15px 0 15px',
+    borderBottom: '1px solid rgba(100, 100, 100, 1)'
   }
 
   const buttonStyles = {

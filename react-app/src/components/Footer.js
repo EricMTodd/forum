@@ -5,7 +5,8 @@ const Footer = () => {
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
-    gap: '5px'
+    gap: '5px',
+    borderTop: '1px solid rgba(100, 100, 100, 1)'
   }
 
   const linkStyles = {
