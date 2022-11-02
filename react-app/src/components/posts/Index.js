@@ -28,7 +28,7 @@ const Index = ({
     axios.get(`${domain}/posts`)
     .then(response => {
       if (response.data.successful) {
-        setPosts(response.data.posts)
+        setPosts(response.data.posts.reverse())
       } else {
         navigate('/404')
       }

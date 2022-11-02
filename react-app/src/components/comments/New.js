@@ -19,22 +19,39 @@ const New = ({
   const handleSubmit = e => {
     e.preventDefault()
     console.log('handleSubmit')
-    axios.post(`${domain}/comments/create`, {
-      comment: {
-        user_id: currentUser.id,
-        user_handle: currentUser.handle,
-        post_id: post.id,
-        body: body,
-        parent_id: parentComment.id
-      }
-    })
-    .then(response => {
-      console.log(response.data)
-      if (response.data.successful) {
-        window.location.reload()
-      }
-    })
-    .catch(error => console.log(error))
+    if (parentComment) {
+      axios.post(`${domain}/comments/create`, {
+        comment: {
+          user_id: currentUser.id,
+          user_handle: currentUser.handle,
+          post_id: post.id,
+          body: body,
+          parent_id: parentComment.id
+        }
+      })
+      .then(response => {
+        console.log(response.data)
+        if (response.data.successful) {
+          window.location.reload()
+        }
+      })
+      .catch(error => console.log(error))
+    } else {
+      axios.post(`${domain}/comments/create`, {
+        comment: {
+          user_id: currentUser.id,
+          user_handle: currentUser.handle,
+          post_id: post.id,
+          body: body        }
+      })
+      .then(response => {
+        console.log(response.data)
+        if (response.data.successful) {
+          window.location.reload()
+        }
+      })
+      .catch(error => console.log(error))
+    }
   }
 
   const buttonHoverEffect = e => {

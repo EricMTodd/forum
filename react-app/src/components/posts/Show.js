@@ -28,7 +28,7 @@ const Show = ({
     .then(response => {
       if (response.data.successful) {
         setPost(response.data.post)
-        setComments(response.data.comments)
+        setComments(response.data.comments.reverse())
       } else {
         navigate('/404')
       }
