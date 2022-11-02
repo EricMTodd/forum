@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import { New as NewComment } from './New'
 
 const Show = ({
@@ -12,7 +13,8 @@ const Show = ({
 
   const commentStyles = {
     borderLeft: '2px solid rgba(100, 100, 100, 1)',
-    paddingLeft: '5px'
+    paddingLeft: '5px',
+    marginBottom: '30px'
   }
 
   const replyButtonStyles = {
@@ -31,7 +33,7 @@ const Show = ({
     }
   }
 
-  const replyButtonHoverEffect = e => {
+  const linkHoverEffect = e => {
     if (e.target.style.textDecoration !== 'underline') {
       e.target.style.textDecoration = 'underline'
     } else {
@@ -41,8 +43,9 @@ const Show = ({
 
   return(
     <div id={`comment-${comment.id}`} style={commentStyles}>
+      <Link to={`/users/${comment.user_id}`} style={{textDecoration: 'none'}} onMouseOver={linkHoverEffect} onMouseLeave={linkHoverEffect}>{comment.user_handle}</Link>
       <p>{comment.body}</p>
-      { loggedIn && <button type='button' onClick={toggleReplyForm} style={replyButtonStyles} onMouseEnter={replyButtonHoverEffect} onMouseLeave={replyButtonHoverEffect}>Reply</button> }
+      { loggedIn && <button type='button' onClick={toggleReplyForm} style={replyButtonStyles} onMouseEnter={linkHoverEffect} onMouseLeave={linkHoverEffect}>Reply</button> }
       { loggedIn && <NewComment domain={domain} currentUser={currentUser} post={post} parentComment={comment} /> }
       <ul>
         { childComments.map(comment => 
