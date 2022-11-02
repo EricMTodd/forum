@@ -4,7 +4,8 @@ import axios from 'axios'
 const New = ({
   domain,
   currentUser,
-  post
+  post,
+  parentComment
 }) => {
   const [body, setBody] = useState('')
 
@@ -23,7 +24,8 @@ const New = ({
         user_id: currentUser.id,
         user_handle: currentUser.handle,
         post_id: post.id,
-        body: body
+        body: body,
+        parent_id: parentComment.id
       }
     })
     .then(response => {
@@ -55,8 +57,15 @@ const New = ({
     }
   }
 
+  let formDisplay
+  if (parentComment) {
+    formDisplay = {
+      display: 'none'
+    }
+  }
+
   return(
-    <div id='new-comment-container'>
+    <div className='new-comment-container' style={formDisplay}>
       <form onSubmit={handleSubmit}>
         <label htmlFor='new-comment-body-textarea'>
           <strong>Comment as {currentUser.handle}</strong>

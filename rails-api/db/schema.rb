@@ -10,13 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_11_02_015646) do
+ActiveRecord::Schema[7.0].define(version: 2022_11_02_163506) do
   create_table "comments", force: :cascade do |t|
     t.integer "post_id"
     t.integer "user_id"
     t.string "user_handle"
     t.text "body"
-    t.integer "comment_id"
+    t.integer "parent_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -26,8 +26,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_02_015646) do
     t.text "body"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "author_id"
-    t.string "author_handle"
     t.integer "user_id"
     t.string "user_handle"
   end

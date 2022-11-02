@@ -13,7 +13,8 @@ const Show = ({
   const params = useParams()
   const [post, setPost] = useState({})
   const [comments, setComments] = useState([])
-  const topLevelComments = comments.filter(comment => comment.comment_id === null)
+  const topLevelComments = comments.filter(comment => comment.parent_id === null)
+
 
   const containerStyles = {
     backgroundColor: 'rgba(50, 50, 50, 1)',
@@ -50,7 +51,10 @@ const Show = ({
       <p>{post.body}</p>
       { loggedIn && <NewComment domain={domain} currentUser={currentUser} post={post} /> }
       <ul>
-        { topLevelComments.map(comment => <li key={comment.id}><ShowComment comments={comments} parentComment={comment} /></li>) }
+        { topLevelComments.map(comment => 
+          <li key={comment.id}>
+            <ShowComment domain={domain} currentUser={currentUser} loggedIn={loggedIn} post={post} comments={comments} comment={comment} />
+          </li>) }
       </ul>
     </div>
   )
