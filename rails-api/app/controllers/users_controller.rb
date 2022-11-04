@@ -44,10 +44,29 @@ class UsersController < ApplicationController
     end
   end
 
+  def update
+    user = User.find_by(id: params[:id])
+    user.update(user_params)
+
+    if user.save!
+      render json: {
+        message: 'User updated',
+        user: user,
+        successful: true
+      }
+    else
+      render json: {
+        message: 'Failed to update user!',
+        user: {},
+        successful: false
+      }
+    end
+  end
+
   private
 
   def user_params
-    params.require(:user).permit(:handle, :email, :password, :password_confirmation)
+    params.require(:user).permit(:id, :handle, :email, :password, :password_confirmation)
   end
 
 end

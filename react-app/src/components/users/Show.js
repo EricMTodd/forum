@@ -3,7 +3,9 @@ import { Link, useNavigate, useParams } from 'react-router-dom'
 import axios from 'axios'
 
 const Show = ({
-  domain
+  domain,
+  loggedIn,
+  currentUser
 }) => {
   const navigate = useNavigate()
   const params = useParams()
@@ -49,6 +51,7 @@ const Show = ({
   return(
     <div className='show-user-container' style={containerStyles}>
       <h1>{user.handle}</h1>
+      {loggedIn && currentUser.id === user.id && <Link to={`/users/${user.id}/edit`}>Edit</Link>}
       <h2>Posts</h2>
       <div id={`user-${user.id}-posts-container`}>
         {posts.map(post => <div key={post.id} id={`post-${post.id}`} style={postStyles}><Link to={`/posts/${post.id}`} style={{textDecoration: 'none', fontWeight: 'bold', fontSize: '24px'}} onMouseEnter={linkHoverEffect} onMouseLeave={linkHoverEffect}>{post.title}</Link></div>)}

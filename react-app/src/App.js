@@ -15,7 +15,7 @@ const App = () => {
   const logIn = data => {
     setCurrentUser(data.user)
     setLoggedIn(data.logged_in)
-    Cookies.set('persistenceToken', data.user.persistence_token, { expires: 14 })
+    Cookies.set('persistenceToken', data.user.persistence_token, {sameSite: 'strict'}, { expires: 14 })
   }
 
   const logOut = () => {
