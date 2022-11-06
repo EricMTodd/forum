@@ -64,7 +64,28 @@ class UsersController < ApplicationController
   end
 
   def destroy
-    user = User.find
+    user = User.find_by(id: params[:id])
+    puts('params: ', params)
+
+    if user && user.authenticate(params[:password])
+      if user.destroy!
+        render json: {
+          message: 'User destroyd.',
+          successful: true
+        }
+      else
+        render json: {
+          message: 'Failed to destroy user!',
+          successful: false
+        }
+      end
+    else
+      render json: {
+        message: 'Failed to authenticate user!',
+        successful: false
+      }
+    end
+
   end
 
   private

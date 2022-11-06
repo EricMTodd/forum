@@ -1,11 +1,13 @@
 import { useEffect, useState } from 'react'
 import { Link, useNavigate, useParams } from 'react-router-dom'
 import axios from 'axios'
+import Cookies from 'js-cookie'
 
 const Show = ({
   domain,
   loggedIn,
-  currentUser
+  currentUser,
+  logOut
 }) => {
   const navigate = useNavigate()
   const params = useParams()
@@ -72,6 +74,16 @@ const Show = ({
   const handleDestroy = e => {
     e.preventDefault()
     console.log('handleDestroy')
+    axios.post(`${domain}/users/${user.id}/destroy`, {
+      password: password
+    })
+    .then(response => {
+      console.log(response.data)
+      if (response.data.successful) {
+        logOut()
+      }
+    })
+    .catch(error => console.log(error))
   }
 
   const linkHoverEffect = e => {
@@ -84,8 +96,14 @@ const Show = ({
 
   const toggleDestroyUserConfirmationModal = () => {
     const modal = document.querySelector('.destroy-user-confirmation-modal-container')
+    const cancelButton = document.querySelector('#cancel-destroy-user-button')
+    const confirmButton = document.querySelector('#confirm-destroy-user-button')
     if (modal.style.display !== 'flex') {
       modal.style.display = 'flex'
+      cancelButton.style.backgroundColor = 'rgba(150, 150, 150, 1)'
+      cancelButton.style.color = 'black'
+      confirmButton.style.backgroundColor = 'rgba(150, 150, 150, 1)'
+      confirmButton.style.color = 'black'
     } else {
       modal.style.display = 'none'
     }
@@ -136,8 +154,8 @@ const Show = ({
             <br />
             <input type='password' id='destroy-user-confirmation-modal-password-input' name='password' value={password} onChange={e => setPassword(e.target.value)} style={{width: '100%', marginBottom: '25px' }} />
             <div style={{display: 'flex', justifyContent: 'space-around'}}>
-              <button type='submit' style={{width: '33%', height: '40px', marginTop: '10px', borderRadius: '25px', backgroundColor: 'rgba(150, 150, 150, 1)', border: 'none'}} onMouseEnter={confirmButtonHoverEffect} onMouseLeave={confirmButtonHoverEffect} onMouseDown={buttonOnMouseDownEffect} onMouseUp={confirmButtonOnMouseUpEffect}>Confirm</button>
-              <button type='button' style={{width: '33%', height: '40px',marginTop: '10px', borderRadius: '25px', backgroundColor: 'rgba(150, 150, 150, 1)', border: 'none'}} onMouseEnter={cancelButtonHoverEffect} onMouseLeave={cancelButtonHoverEffect} onMouseDown={buttonOnMouseDownEffect} onMouseUp={() => window.location.reload()}>Cancel</button>
+              <button type='submit' id='confirm-destroy-user-button' style={{width: '33%', height: '40px', marginTop: '10px', borderRadius: '25px', backgroundColor: 'rgba(150, 150, 150, 1)', border: 'none'}} onClick={handleDestroy} onMouseEnter={confirmButtonHoverEffect} onMouseLeave={confirmButtonHoverEffect} onMouseDown={buttonOnMouseDownEffect} onMouseUp={confirmButtonOnMouseUpEffect}>Confirm</button>
+              <button type='button' id='cancel-destroy-user-button' style={{width: '33%', height: '40px',marginTop: '10px', borderRadius: '25px', backgroundColor: 'rgba(150, 150, 150, 1)', border: 'none'}} onMouseEnter={cancelButtonHoverEffect} onMouseLeave={cancelButtonHoverEffect} onMouseDown={buttonOnMouseDownEffect} onMouseUp={toggleDestroyUserConfirmationModal}>Cancel</button>
             </div>
           </form>
         </div>

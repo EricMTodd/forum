@@ -1,6 +1,6 @@
 class Comment < ApplicationRecord
   validates :body, presence: true
   belongs_to :post
-  belongs_to :comment
-  has_many :comments, dependent: :destroy
+  belongs_to :parent, class_name: 'Comment', optional: true
+  has_many :comments, foreign_key: :parent_id, dependent: :destroy
 end

@@ -12,7 +12,8 @@ const Main = ({
   domain,
   logIn,
   currentUser,
-  loggedIn
+  loggedIn,
+  logOut
 }) => {
 
   const mainStyles = {
@@ -28,7 +29,7 @@ const Main = ({
     <Routes>
       <Route path='/' element={<PostsIndex domain={domain} loggedIn={loggedIn} />} />
       <Route path='/posts/new' element={<NewPost domain={domain} currentUser={currentUser} />} />
-      <Route path='/users/:id' element={<ShowUser domain={domain} currentUser={currentUser} loggedIn={loggedIn} />} />
+      <Route path='/users/:id' element={<ShowUser domain={domain} currentUser={currentUser} loggedIn={loggedIn} logOut={logOut} />} />
       <Route path='/posts/:id' element={<ShowPost domain={domain} loggedIn={loggedIn} currentUser={currentUser} />} />
       <Route path='/users/:id/edit' element={<EditUser domain={domain} currentUser={currentUser} />} />
       <Route path='*' element={<NotFound />} />

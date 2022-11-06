@@ -43,7 +43,7 @@ const App = () => {
   return(
     <div id='app'>
       <Nav loggedIn={loggedIn} currentUser={currentUser} logOut={logOut} />
-      <Main domain={domain} logIn={logIn} currentUser={currentUser} loggedIn={loggedIn} />
+      <Main domain={domain} logIn={logIn} currentUser={currentUser} loggedIn={loggedIn} logOut={logOut} />
       <Footer />
     </div>
   )
