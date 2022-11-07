@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   get 'posts', to: 'posts#index'
   post 'posts/create', to: 'posts#create'
   get 'posts/:id', to: 'posts#show'
+  delete 'posts/:id/destroy', to: 'posts#destroy'
 
   # Comments routes
   post 'comments/create', to: 'comments#create'

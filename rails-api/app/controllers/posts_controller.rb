@@ -57,6 +57,22 @@ class PostsController < ApplicationController
     end
   end
 
+  def destroy
+    post = Post.find_by(id: params[:id])
+
+    if post.destroy!
+      render json: {
+        message: 'Post destroyed.',
+        successful: true
+      }
+    else
+      render json: {
+        message: 'Failed to destroy post!',
+        successful: false
+      }
+    end
+  end
+
   private
 
   def post_params

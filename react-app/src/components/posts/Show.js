@@ -15,12 +15,20 @@ const Show = ({
   const [comments, setComments] = useState([])
   const topLevelComments = comments.filter(comment => comment.parent_id === null)
 
-
   const containerStyles = {
     backgroundColor: 'rgba(50, 50, 50, 1)',
     padding: '50px',
     marginTop: '50px',
     borderRadius: '15px'
+  }
+
+  const buttonStyles = {
+    background: 'none',
+    color: 'white',
+    border: 'none',
+    fontWeight: 'normal',
+    textDecoration: 'none',
+    fontSize: '16px'
   }
 
   useEffect(() => {
@@ -36,6 +44,18 @@ const Show = ({
     .catch(error => console.log(error))
   }, [params.id])
 
+  const handleDestroy = () => {
+    console.log('handleDestroy')
+    axios.delete(`${domain}/posts/${post.id}/destroy`)
+    .then(response => {
+      console.log(response.data)
+      if (response.data.successful) {
+        navigate('/')
+      }
+    })
+    .catch(error => console.log(error))
+  }
+
   const linkHoverEffect = e => {
     if (e.target.style.textDecoration !== 'underline') {
       e.target.style.textDecoration = 'underline'
@@ -49,6 +69,7 @@ const Show = ({
       <h1 style={{marginTop: '0'}}>{post.title}</h1>
       <Link to={`/users/${post.user_id}`} style={{textDecoration: 'none'}} onMouseEnter={linkHoverEffect} onMouseLeave={linkHoverEffect}>{post.user_handle}</Link>
       <p>{post.body}</p>
+      { loggedIn && currentUser.id === post.user_id && <button type='button' style={buttonStyles} onClick={handleDestroy} onMouseEnter={linkHoverEffect} onMouseLeave={linkHoverEffect}>Delete</button> }
       { loggedIn && <NewComment domain={domain} currentUser={currentUser} post={post} /> }
       <ul>
         { topLevelComments.map(comment => 
