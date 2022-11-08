@@ -18,6 +18,22 @@ class CommentsController < ApplicationController
     end
   end
 
+  def destroy
+    comment = Comment.find_by(id: params[:id])
+
+    if comment.destroy!
+      render json: {
+        message: 'Comment destroyed',
+        successful: true
+      }
+    else
+      render json: {
+        message: 'Failed to destroy comment!',
+        successful: false
+      }
+    end
+  end
+
   private
 
   def comment_params
