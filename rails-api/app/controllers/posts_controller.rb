@@ -57,6 +57,22 @@ class PostsController < ApplicationController
     end
   end
 
+  def update
+    post = Post.find_by(id: params[:id])
+
+    if post.update(post_params)
+      render json: {
+        message: 'Updated post.',
+        successful: true
+      }
+    else
+      render json: {
+        message: 'Failed to update post!',
+        successful: false
+      }
+    end
+  end
+
   def destroy
     post = Post.find_by(id: params[:id])
 

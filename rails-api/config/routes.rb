@@ -4,15 +4,16 @@ Rails.application.routes.draw do
   post 'sessions/create', to: 'sessions#create'
 
   # Users routes
-  post 'users/create', to: 'users#create'
   get 'users/:id', to: 'users#show'
+  post 'users/create', to: 'users#create'
   patch 'users/:id', to: 'users#update'
   post 'users/:id/destroy', to: 'users#destroy'
 
   # Posts routes
   get 'posts', to: 'posts#index'
-  post 'posts/create', to: 'posts#create'
   get 'posts/:id', to: 'posts#show'
+  post 'posts/create', to: 'posts#create'
+  patch 'posts/:id/update', to: 'posts#update'
   delete 'posts/:id/destroy', to: 'posts#destroy'
 
   # Comments routes
