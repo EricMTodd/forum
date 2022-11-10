@@ -46,10 +46,8 @@ const Show = ({
   }, [params.id])
 
   const handleDestroy = () => {
-    console.log('handleDestroy')
     axios.delete(`${domain}/posts/${post.id}/destroy`)
     .then(response => {
-      console.log(response.data)
       if (response.data.successful) {
         navigate('/')
       }

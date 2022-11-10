@@ -18,7 +18,6 @@ const New = ({
 
   const handleSubmit = e => {
     e.preventDefault()
-    console.log('handleSubmit')
     if (parentComment) {
       axios.post(`${domain}/comments/create`, {
         comment: {
@@ -30,7 +29,6 @@ const New = ({
         }
       })
       .then(response => {
-        console.log(response.data)
         if (response.data.successful) {
           window.location.reload()
         }
@@ -45,7 +43,6 @@ const New = ({
           body: body        }
       })
       .then(response => {
-        console.log(response.data)
         if (response.data.successful) {
           window.location.reload()
         }

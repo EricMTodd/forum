@@ -57,7 +57,6 @@ const Edit = ({
       }
     })
     .then(response => {
-      console.log(response.data)
       if (response.data.successful) {
         navigate(`/users/${currentUser.id}`)
       } 

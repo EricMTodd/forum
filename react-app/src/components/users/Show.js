@@ -73,12 +73,10 @@ const Show = ({
 
   const handleDestroy = e => {
     e.preventDefault()
-    console.log('handleDestroy')
     axios.post(`${domain}/users/${user.id}/destroy`, {
       password: password
     })
     .then(response => {
-      console.log(response.data)
       if (response.data.successful) {
         logOut()
       }

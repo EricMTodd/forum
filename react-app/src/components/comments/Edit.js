@@ -3,9 +3,9 @@ import axios from 'axios'
 
 const Edit = ({
   domain,
-  post
+  comment
 }) => {
-  const [body, setBody] = useState(post.body)
+  const [body, setBody] = useState(comment.body)
 
   const containerStyles = {
     display: 'none'
@@ -13,8 +13,8 @@ const Edit = ({
 
   const handleSubmit = e => {
     e.preventDefault()
-    axios.patch(`${domain}/posts/${post.id}/update`, {
-      post: {
+    axios.patch(`${domain}/comments/${comment.id}/update`, {
+      comment: {
         body: body
       }
     })
@@ -27,13 +27,13 @@ const Edit = ({
   }
 
   return(
-    <div className='edit-post-form-container' style={containerStyles}>
-      <form className='edit-post-form' onSubmit={handleSubmit}>
-        <label htmlFor='edit-post-body-textarea'>
-          <strong>Edit post body</strong>
+    <div id='edit-comment-form-container' style={containerStyles}>
+      <form onSubmit={handleSubmit}>
+        <label htmlFor='edit-comment-body-textarea'>
+          <strong>Edit comment body</strong>
         </label>
         <br />
-        <textarea id='edit-post-body-textarea' name='body' value={body} onChange={e => setBody(e.target.value)} />
+        <textarea id='edit-comment-body-textarea' name='body' value={body} onChange={e => setBody(e.target.value)} />
         <br />
         <br />
         <button type='submit'>Submit</button>

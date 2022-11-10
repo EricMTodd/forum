@@ -18,6 +18,22 @@ class CommentsController < ApplicationController
     end
   end
 
+  def update
+    comment = Comment.find_by(id: params[:id])
+
+    if comment.update(comment_params)
+      render json: {
+        message: 'Comment updated.',
+        successful: true
+      }
+    else
+      render json: {
+        message: 'Failed to update comment!',
+        successful: false
+      }
+    end
+  end
+
   def destroy
     comment = Comment.find_by(id: params[:id])
 
