@@ -20,7 +20,8 @@ const Show = ({
     backgroundColor: 'rgba(50, 50, 50, 1)',
     padding: '50px',
     marginTop: '50px',
-    borderRadius: '15px'
+    borderRadius: '15px',
+    border: '1px solid rgba(100, 100, 100, 1)'
   }
 
   const buttonStyles = {

@@ -21,7 +21,8 @@ const Index = ({
     borderRadius: '5px',
     display: 'flex',
     justifyContent: 'space-between',
-    alignItems: 'center'
+    alignItems: 'center',
+    border: '1px solid rgba(100, 100, 100, 1)'
   }
 
   useEffect(() => {
