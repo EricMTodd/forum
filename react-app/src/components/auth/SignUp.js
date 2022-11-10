@@ -32,7 +32,9 @@ const SignUp = ({
   const inputStyles = {
     borderRadius: '5px',
     width: '100%',
-    height: '25px'
+    height: '25px',
+    backgroundColor: 'rgba(100, 100, 100, 1)',
+    border: '1px solid rgba(150, 150, 150, 1)'
   }
 
   const buttonStyles = {
