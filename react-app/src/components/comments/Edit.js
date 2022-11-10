@@ -11,6 +11,13 @@ const Edit = ({
     display: 'none'
   }
 
+  const buttonStyles = {
+    borderRadius: '25px',
+    backgroundColor: 'rgba(150, 150, 150, 1)',
+    border: 'none',
+    padding: '5px 15px 5px 15px',
+  }
+
   const textAreaStyles = {
     width: '450px',
     height: '150px',
@@ -34,6 +41,26 @@ const Edit = ({
     .catch(error => console.log(error))
   }
 
+  const buttonHoverEffect = e => {
+    if (e.target.style.backgroundColor !== 'blue') {
+      e.target.style.backgroundColor = 'blue'
+      e.target.style.color = 'white'
+    } else {
+      e.target.style.backgroundColor = 'rgba(150, 150, 150, 1)'
+      e.target.style.color = 'black'
+    }
+  }
+
+  const buttonClickEffect = e => {
+    if (e.target.style.backgroundColor !== 'white') {
+      e.target.style.backgroundColor = 'white'
+      e.target.style.color = 'black'
+    } else {
+      e.target.style.backgroundColor = 'blue'
+      e.target.style.color = 'white'
+    }
+  }
+
   return(
     <div id='edit-comment-form-container' style={containerStyles}>
       <form onSubmit={handleSubmit}>
@@ -44,7 +71,7 @@ const Edit = ({
         <textarea id='edit-comment-body-textarea' name='body' value={body} onChange={e => setBody(e.target.value)} style={textAreaStyles} />
         <br />
         <br />
-        <button type='submit'>Submit</button>
+        <button type='submit' style={buttonStyles} onMouseEnter={buttonHoverEffect} onMouseLeave={buttonHoverEffect} onMouseDown={buttonClickEffect} onMouseUp={buttonClickEffect}>Submit</button>
       </form>
     </div>
   )
