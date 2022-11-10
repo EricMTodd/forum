@@ -11,6 +11,14 @@ const Edit = ({
     display: 'none'
   }
 
+  const textAreaStyles = {
+    width: '450px',
+    height: '150px',
+    backgroundColor: 'rgba(100, 100, 100, 1)',
+    borderRadius: '5px',
+    border: '1px solid rgba(150, 150, 150, 1)'
+  }
+
   const handleSubmit = e => {
     e.preventDefault()
     axios.patch(`${domain}/posts/${post.id}/update`, {
@@ -33,7 +41,7 @@ const Edit = ({
           <strong>Edit post body</strong>
         </label>
         <br />
-        <textarea id='edit-post-body-textarea' name='body' value={body} onChange={e => setBody(e.target.value)} />
+        <textarea id='edit-post-body-textarea' name='body' value={body} onChange={e => setBody(e.target.value)} style={textAreaStyles} />
         <br />
         <br />
         <button type='submit'>Submit</button>

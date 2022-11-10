@@ -42,6 +42,14 @@ const New = ({
     border: 'none'
   }
 
+  const textAreaStyles = {
+    width: '100%',
+    height: '150px',
+    backgroundColor: 'rgba(100, 100, 100, 1)',
+    borderRadius: '5px',
+    border: '1px solid rgba(150, 150, 150, 1)'
+  }
+
   // METHODS
   const handleSubmit = e => {
     e.preventDefault()
@@ -96,7 +104,7 @@ const New = ({
           <strong>Body</strong>
         </label>
         <br />
-        <textarea id='new-post-body-textarea' name='body' value={body} onChange={e => setBody(e.target.value)} style={{width: '100%', height: '150px'}} />
+        <textarea id='new-post-body-textarea' name='body' value={body} onChange={e => setBody(e.target.value)} style={textAreaStyles} />
         <br />
         <br />
         <button type='submit' style={buttonStyles} onMouseEnter={buttonHoverEffect} onMouseLeave={buttonHoverEffect} onMouseDown={buttonClickEffect} onMouseUp={buttonClickEffect}>Submit</button>

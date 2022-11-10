@@ -13,7 +13,15 @@ const New = ({
     borderRadius: '25px',
     backgroundColor: 'rgba(150, 150, 150, 1)',
     border: 'none',
-    padding: '5px 15px 5px 15px'
+    padding: '5px 15px 5px 15px',
+  }
+  
+  const textAreaStyles = {
+    width: '450px',
+    height: '150px',
+    backgroundColor: 'rgba(100, 100, 100, 1)',
+    borderRadius: '5px',
+    border: '1px solid rgba(150, 150, 150, 1)'
   }
 
   const handleSubmit = e => {
@@ -85,7 +93,7 @@ const New = ({
           <strong>Comment as {currentUser.handle}</strong>
         </label>
         <br />
-        <textarea id='new-comment-body-textarea' name='body' value={body} onChange={e => setBody(e.target.value)} style={{width: '450px', height: '150px'}} />
+        <textarea id='new-comment-body-textarea' name='body' value={body} onChange={e => setBody(e.target.value)} style={textAreaStyles} />
         <br />
         <br />
         <button type='submit' style={buttonStyles} onMouseEnter={buttonHoverEffect} onMouseLeave={buttonHoverEffect} onMouseDown={buttonClickEffect} onMouseUp={buttonClickEffect}>Submit</button>
