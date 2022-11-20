@@ -1,0 +1,6 @@
+@media (min-width: 900px) {
+  body {
+    margin: 0 auto;
+    background-color: royalblue;
+  }
+}
