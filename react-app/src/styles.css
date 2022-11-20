@@ -1,25 +1,3 @@
-* {
-  font-family: 'fira sans', sans-serif;
-  color: white;
-}
-
-::-webkit-scrollbar {
-  display: none;
-}
-
-html {
-  overflow: hidden;
-}
-
 body {
   margin: 0 auto;
-  background-color: black;
-}
-
-button {
-  color: black;
-}
-
-li {
-  list-style: none;
 }

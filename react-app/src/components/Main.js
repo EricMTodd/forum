@@ -16,13 +16,6 @@ const Main = ({
   logOut
 }) => {
 
-  const mainStyles = {
-    height: 'calc(100vh - 75px)',
-    backgroundColor: 'black',
-    padding: '0 16.5% 0 16.5%',
-    overflowX: 'scroll'
-  }
-
   let routes
   if (loggedIn) {
     routes =
@@ -47,7 +40,7 @@ const Main = ({
   }
 
   return(
-    <main style={mainStyles}>
+    <main>
       {routes}
     </main>
   )

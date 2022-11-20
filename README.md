@@ -1,6 +1,6 @@
 # forum
 
 # TODO
- - Optimize toggle buttons for editing
- - Optimize for mobile
- - Add test suites
+ - Optimize toggle buttons for editing; Complete: []
+ - Optimize for mobile; Complete: []
+ - Add test suites; Complete: []

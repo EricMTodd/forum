@@ -1,16 +1,6 @@
 const NotFound = () => {
-  const containerStyles = {
-    height: '100%',
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
-    justifyContent: 'center',
-    fontSize: '96px'
-  }
-
   return(
-
-    <div id='not-found' style={containerStyles}>
+    <div id='not-found'>
       <h1>Are you lost...?</h1>
     </div>
   )
