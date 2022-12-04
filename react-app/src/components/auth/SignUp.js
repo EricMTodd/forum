@@ -37,8 +37,8 @@ const SignUp = ({
 
   return(
     <div id='sign-up-form-container'>
-      <form onSubmit={handleSubmit}>
-        <h1 style={{marginTop: '0'}}>Sign up</h1>
+      <h1>Sign up</h1>
+      <form onSubmit={handleSubmit} id='sign-up-form'>
         <label htmlFor='sign-up-handle-input'>
           <strong>Handle</strong>
         </label>
@@ -67,7 +67,7 @@ const SignUp = ({
         <input type='password' id='sign-up-password-confirmation-input' name='passwordConfirmation' value={passwordConfirmation} onChange={e => setPasswordConfirmation(e.target.value)} />
         <br />
         <br />
-        <button type='submit'>Submit</button>
+        <button type='submit' className='alpha-button'>Submit</button>
       </form>
     </div>
   )

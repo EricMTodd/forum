@@ -26,7 +26,7 @@ const Index = ({
       <h1>Forum Posts</h1>
       {loggedIn && <Link to='posts/new'>New Post</Link>}
       <div id='posts-container'>
-        {posts.map(post => <div key={post.id} id={`post-${post.id}`}><Link to={`/posts/${post.id}`}>{post.title}</Link><Link to={`/users/${post.user_id}`}>{post.user_handle}</Link></div>)}
+        {posts.map(post => <div key={post.id} className='posts-index-card' id={`post-${post.id}`}><Link to={`/posts/${post.id}`}>{post.title}</Link><Link to={`/users/${post.user_id}`}>{post.user_handle}</Link></div>)}
       </div>
     </div>
   )

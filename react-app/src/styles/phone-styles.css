@@ -1,6 +1,112 @@
 @media (min-width: 0px) {
+  * {
+    color: white;
+    font-family: 'fira sans', arial, sans-serif;
+  }
+
+  html {
+    height: 100vh;
+  }
+
   body {
     margin: 0 auto;
-    background-color: springgreen;
+    background-color: black;
+    height: 100vh;
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  nav {
+    background-color: rgba(25, 25, 25, 1);
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 5px 0 5px;
+    border-bottom: 1px solid rgba(50, 50, 50, 1);
+  }
+
+  main {
+    background-color: black;
+    height: calc(100vh - 77px);
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+  }
+
+  footer {
+    background-color: rgba(25, 25, 25, 1);
+    height: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    border-top: 1px solid rgba(50, 50, 50, 1);
+  }
+
+  h1 {
+    margin-top: 0;
+  }
+
+  li {
+    list-style: none;
+    border-left: 2px solid rgba(50, 50, 50, 1);
+    padding-left: 5px;
+  }
+
+  .posts-index-card {
+    background-color: rgba(25, 25, 25, 1);
+    border: 1px solid rgba(50, 50, 50, 1);
+    margin: 15px 0 15px 0;
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 5px 15px 5px;
+  }
+
+  .show-post-container {
+    background-color: rgba(25, 25, 25, 1);
+    margin: 5px;
+    padding: 5px;
+    border-radius: 5px;
+  }
+
+  #app {
+    height: 100vh;
+  }
+
+  #log-in-form, #sign-up-form {
+    display: flex;
+    flex-direction: column;
+  }
+
+  #log-in-form > input, #sign-up-form > input {
+    margin-bottom: 15px;
+  }
+
+  #log-in-form-container, #sign-up-form-container {
+    background-color:rgba(25, 25, 25, 1);
+    margin: 5px;
+    padding: 15px;
+    border-radius: 5px;
+  }
+
+  #sessions-links {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+  }
+
+  .alpha-button {
+    background-color: rgba(100, 100, 100, 1);
+    padding: 5px 8px 5px 8px;
+    border-radius: 15px;
+    border: none;
+  }
+
+  .alpha-button:active {
+    background-color: white;
+    color: black;
   }
 }

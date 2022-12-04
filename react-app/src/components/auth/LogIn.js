@@ -27,8 +27,8 @@ const LogIn = ({
 
   return(
     <div id='log-in-form-container'>
-      <form onSubmit={handleSubmit}>
-        <h1 style={{marginTop: '0'}}>Log in</h1>
+      <h1>Log in</h1>
+      <form onSubmit={handleSubmit} id='log-in-form'>
         <label htmlFor='log-in-email-input'>
           <strong>Email</strong>
         </label>
@@ -43,7 +43,7 @@ const LogIn = ({
         <input type='password' id='log-in-password-input' name='password' value={password} onChange={e => setPassword(e.target.value)} />
         <br />
         <br />
-        <button type='submit'>Submit</button>
+        <button type='submit' className='alpha-button'>Submit</button>
       </form>
     </div>
   )

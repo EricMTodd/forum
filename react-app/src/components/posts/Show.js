@@ -41,7 +41,7 @@ const Show = ({
 
   return(
     <div className='show-post-container'>
-      <h1 style={{marginTop: '0'}}>{post.title}</h1>
+      <h1>{post.title}</h1>
       <Link to={`/users/${post.user_id}`}>{post.user_handle}</Link>
       <br />
       <p>{post.body}</p>
