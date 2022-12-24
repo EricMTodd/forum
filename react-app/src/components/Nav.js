@@ -11,7 +11,7 @@ const Nav = ({
     sessionsLinks =
     <div id='sessions-links'>
       <Link to={`users/${currentUser.id}`}>{currentUser.handle}</Link>
-      <button type='button' onClick={logOut}>Log out</button>
+      <button type='button' id='log-out-button' className='alpha-button' onClick={logOut}>Log out</button>
     </div>
   } else {
     sessionsLinks =

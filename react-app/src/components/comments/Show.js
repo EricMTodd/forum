@@ -37,10 +37,14 @@ const Show = ({
     if (e.target.nextSibling.style.display !== 'block') {
       e.target.nextSibling.style.display = 'block'
       e.target.previousSibling.style.display = 'none'
+      e.target.nextSibling.nextSibling.style.display = 'none'
+      e.target.nextSibling.nextSibling.nextSibling.style.display = 'none'
       e.target.innerText = 'Hide'
     } else {
       e.target.nextSibling.style.display = 'none'
       e.target.previousSibling.style.display = 'block'
+      e.target.nextSibling.nextSibling.style.display = 'inline'
+      e.target.nextSibling.nextSibling.nextSibling.style.display = 'inline'
       e.target.innerText = 'Edit'
     }
   }
@@ -50,10 +54,10 @@ const Show = ({
       <Link to={`/users/${comment.user_id}`}>{comment.user_handle}</Link>
       <br />
       <p>{comment.body}</p>
-      { loggedIn && currentUser.id === comment.user_id && <button type='button' onClick={toggleEditCommentForm}>Edit</button> }
+      { loggedIn && currentUser.id === comment.user_id && <button type='button' className='bravo-button' onClick={toggleEditCommentForm}>Edit</button> }
       { loggedIn && currentUser.id === comment.user_id && <EditComment domain={domain} comment={comment} /> }
-      { loggedIn && currentUser.id === comment.user_id && <button type='button' onClick={handleDestroy}>Delete</button> }
-      { loggedIn && <button type='button' onClick={toggleReplyForm}>Reply</button> }
+      { loggedIn && currentUser.id === comment.user_id && <button type='button' className='bravo-button' onClick={handleDestroy}>Delete</button> }
+      { loggedIn && <button type='button' className='bravo-button' onClick={toggleReplyForm}>Reply</button> }
       { loggedIn && <NewComment domain={domain} currentUser={currentUser} post={post} parentComment={comment} /> }
       <ul>
         { childComments.map(comment => 

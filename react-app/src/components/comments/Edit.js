@@ -23,7 +23,7 @@ const Edit = ({
   }
 
   return(
-    <div id='edit-comment-form-container' >
+    <div className='edit-comment-form-container' >
       <form onSubmit={handleSubmit}>
         <label htmlFor='edit-comment-body-textarea'>
           <strong>Edit comment body</strong>
@@ -32,7 +32,7 @@ const Edit = ({
         <textarea id='edit-comment-body-textarea' name='body' value={body} onChange={e => setBody(e.target.value)} />
         <br />
         <br />
-        <button type='submit'>Submit</button>
+        <button type='submit' className='alpha-button'>Submit</button>
       </form>
     </div>
   )

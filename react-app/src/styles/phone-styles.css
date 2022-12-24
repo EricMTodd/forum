@@ -54,38 +54,48 @@
     list-style: none;
     border-left: 2px solid rgba(50, 50, 50, 1);
     padding-left: 5px;
+    margin-top: 5px;
   }
 
-  .posts-index-card {
-    background-color: rgba(25, 25, 25, 1);
-    border: 1px solid rgba(50, 50, 50, 1);
-    margin: 15px 0 15px 0;
-    display: flex;
-    justify-content: space-between;
-    padding: 15px 5px 15px 5px;
-  }
-
-  .show-post-container {
-    background-color: rgba(25, 25, 25, 1);
-    margin: 5px;
-    padding: 5px;
+  input {
+    color: white;
+    min-width: 100%;
+    max-width: 100%;
     border-radius: 5px;
+    border: 1px solid rgba(100, 100, 100, 1);
+    background-color: rgba(50, 50, 50, 1);
+    height: 25px;
   }
 
+  textarea {
+    color: white;
+    min-width: 100%;
+    max-width: 100%;
+    min-height: 150px;
+    border-radius: 5px;
+    border: 1px solid rgba(100, 100, 100, 1);
+    background-color: rgba(50, 50, 50, 1);
+  }
+
+  p {
+    margin-bottom: 0px;
+    margin-top: 0px;
+  }
+  
   #app {
     height: 100vh;
   }
 
-  #log-in-form, #sign-up-form {
+  #log-in-form, #sign-up-form, #new-post-form {
     display: flex;
     flex-direction: column;
   }
 
-  #log-in-form > input, #sign-up-form > input {
+  #log-in-form > input, #sign-up-form > input, #new-post-form > input, #new-post-form > textarea {
     margin-bottom: 15px;
   }
 
-  #log-in-form-container, #sign-up-form-container {
+  #log-in-form-container, #sign-up-form-container, #new-post-form-container {
     background-color:rgba(25, 25, 25, 1);
     margin: 5px;
     padding: 15px;
@@ -98,6 +108,23 @@
     align-items: center;
   }
 
+  .posts-index-card {
+    background-color: rgba(25, 25, 25, 1);
+    border: 1px solid rgba(50, 50, 50, 1);
+    margin: 15px 5px 15px 5px;
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 5px 15px 5px;
+    border-radius: 5px;
+  }
+
+  .show-post-container {
+    background-color: rgba(25, 25, 25, 1);
+    margin: 5px;
+    padding: 5px;
+    border-radius: 5px;
+  }
+  
   .alpha-button {
     background-color: rgba(100, 100, 100, 1);
     padding: 5px 8px 5px 8px;
@@ -105,8 +132,17 @@
     border: none;
   }
 
+  .bravo-button {
+    border: none;
+    background: none;
+  }
+
   .alpha-button:active {
     background-color: white;
     color: black;
+  }
+
+  .edit-comment-form-container, .new-comment-form-container, .edit-post-form-container {
+    display: none;
   }
 }

@@ -39,15 +39,27 @@ const Show = ({
     .catch(error => console.log(error))
   }
 
+  const toggleEditPostForm = e => {
+    if (e.target.nextSibling.style.display !== 'block') {
+      e.target.nextSibling.style.display = 'block'
+      e.target.nextSibling.nextSibling.style.display = 'none'
+      e.target.innerText = 'Hide'
+    } else {
+      e.target.nextSibling.style.display = 'none'
+      e.target.nextSibling.nextSibling.style.display = 'inline'
+      e.target.innerText = 'Reply'
+    }
+  }
+
   return(
     <div className='show-post-container'>
       <h1>{post.title}</h1>
       <Link to={`/users/${post.user_id}`}>{post.user_handle}</Link>
       <br />
       <p>{post.body}</p>
-      { loggedIn && currentUser.id === post.user_id && <button type='button'>Edit</button> }
+      { loggedIn && currentUser.id === post.user_id && <button type='button' className='bravo-button' onClick={toggleEditPostForm}>Edit</button> }
       { loggedIn && currentUser.id === post.user_id && <EditPost domain={domain} post={post} /> }
-      { loggedIn && currentUser.id === post.user_id && <button type='button' onClick={handleDestroy}>Delete</button> }
+      { loggedIn && currentUser.id === post.user_id && <button type='button' className='bravo-button' onClick={handleDestroy}>Delete</button> }
       { loggedIn && <NewComment domain={domain} currentUser={currentUser} post={post} /> }
       <ul>
         { topLevelComments.map(comment => 

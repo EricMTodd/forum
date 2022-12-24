@@ -32,7 +32,7 @@ const Edit = ({
         <textarea id='edit-post-body-textarea' name='body' value={body} onChange={e => setBody(e.target.value)} />
         <br />
         <br />
-        <button type='submit'>Submit</button>
+        <button type='submit' className='alpha-button'>Submit</button>
       </form>
     </div>
   )

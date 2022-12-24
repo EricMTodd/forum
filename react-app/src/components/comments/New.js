@@ -52,7 +52,7 @@ const New = ({
   }
 
   return(
-    <div className='new-comment-container'>
+    <div className='new-comment-form-container'>
       <form onSubmit={handleSubmit}>
         <label htmlFor='new-comment-body-textarea'>
           <strong>Comment as {currentUser.handle}</strong>

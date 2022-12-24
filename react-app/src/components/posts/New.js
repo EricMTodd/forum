@@ -30,7 +30,7 @@ const New = ({
 
   return(
     <div id='new-post-form-container'>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} id='new-post-form'>
         <h1>New Post</h1>
         <label htmlFor='new-post-title-input'>
           <strong>Title</strong>
@@ -46,7 +46,7 @@ const New = ({
         <textarea id='new-post-body-textarea' name='body' value={body} onChange={e => setBody(e.target.value)} />
         <br />
         <br />
-        <button type='submit'>Submit</button>
+        <button type='submit' className='alpha-button'>Submit</button>
       </form>
     </div>
   )
