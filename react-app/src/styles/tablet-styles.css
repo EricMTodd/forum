@@ -1,6 +1,90 @@
-@media (min-width: 480px) {
+@media screen and (max-width: 899px) and (min-width: 480px) {
+  * {
+    color: white;
+    font-family: 'fira sans', arial, sans-serif;
+  }
+
+  html {
+    height: 100vh;
+  }
+
   body {
     margin: 0 auto;
-    background-color: teal;
+    background-color: black;
+    height: 100vh;
+  }
+
+  nav {
+    height: 50px;
+    background-color: rgba(25, 25, 25, 1);
+    border-bottom: 1px solid rgba(50, 50, 50, 1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 5px 0 5px;
+  }
+
+  main {
+    height: calc(100vh - 75px);
+    margin: 0 16.5% 0 16.5%;
+  }
+
+  footer {
+    height: 25px;
+    background-color: rgba( 25, 25, 25, 1);
+    border-top: 1px solid rgba(50, 50, 50, 1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  .alpha-button {
+    background-color: rgba(100, 100, 100, 1);
+    padding: 5px 8px 5px 8px;
+    border-radius: 15px;
+    border: none;
+  }
+
+  .bravo-button {
+    border: none;
+    background: none;
+  }
+
+  .alpha-button:active {
+    background-color: white;
+    color: black;
+  }
+
+  .posts-index-card {
+    background-color: rgba( 25, 25, 25, 1);
+    border: 1px solid rgba(50, 50, 50, 1);
+    height: 100px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 15px 0 15px;
+  }
+
+  .post-title-link {
+    font-weight: bold;
+    font-size: 24px;
+  }
+
+  #sessions-links {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+  }
+
+  #posts-index-cards-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
   }
 }
