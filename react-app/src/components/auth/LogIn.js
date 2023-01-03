@@ -43,7 +43,7 @@ const LogIn = ({
         <input type='password' id='log-in-password-input' name='password' value={password} onChange={e => setPassword(e.target.value)} />
         <br />
         <br />
-        <button type='submit' className='alpha-button'>Submit</button>
+        <button type='submit' id='log-in-form-button' >Submit</button>
       </form>
     </div>
   )
