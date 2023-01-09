@@ -46,7 +46,7 @@ const New = ({
         <textarea id='new-post-body-textarea' name='body' value={body} onChange={e => setBody(e.target.value)} />
         <br />
         <br />
-        <button type='submit' className='alpha-button'>Submit</button>
+        <button type='submit' className='charlie-button'>Submit</button>
       </form>
     </div>
   )
