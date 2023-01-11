@@ -31,9 +31,10 @@
   main {
     background-color: black;
     height: calc(100vh - 77px);
-    width: 100vw;
+    width: calc(100vw - 10px);
     display: flex;
     flex-direction: column;
+    margin: 0 5px 0 5px;
   }
 
   footer {
@@ -85,7 +86,7 @@
   .posts-index-card {
     background-color: rgba(25, 25, 25, 1);
     border: 1px solid rgba(50, 50, 50, 1);
-    margin: 15px 5px 15px 5px;
+    margin: 15px 0 15px 0;
     display: flex;
     justify-content: space-between;
     padding: 15px 5px 15px 5px;
@@ -94,7 +95,7 @@
 
   .show-post-container {
     background-color: rgba(25, 25, 25, 1);
-    margin: 5px;
+    margin-top: 5px;
     padding: 5px;
     border-radius: 5px;
   }
@@ -147,7 +148,7 @@
 
   #log-in-form-container, #sign-up-form-container, #new-post-form-container {
     background-color:rgba(25, 25, 25, 1);
-    margin: 5px;
+    margin-top: 5px;
     padding: 15px;
     border-radius: 5px;
   }
@@ -159,8 +160,8 @@
   }
 
   #destroy-user-confirmation-modal-container {
-    height: calc(100% - 75px);
-    width: 100%;
+    height: calc(100% - 77px);
+    width: calc(100% - 10px);
     display: flex;
     position: absolute;
     background-color: rgba(0, 0, 0, 0.7);
@@ -172,7 +173,7 @@
     align-items: center;
     justify-content: center;
     background-color:rgba(25, 25, 25, 1);
-    margin: 15% 5px 0 5px;
+    margin-top: 45px;
     padding: 15px;
     border-radius: 5px;
     border: 2px solid red;
