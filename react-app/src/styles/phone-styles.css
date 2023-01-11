@@ -109,6 +109,8 @@
   .bravo-button {
     border: none;
     background: none;
+    font-weight: normal;
+    font-size: 16px;
   }
 
   .alpha-button:active {
@@ -154,5 +156,49 @@
     display: flex;
     gap: 5px;
     align-items: center;
+  }
+
+  #destroy-user-confirmation-modal-container {
+    height: calc(100% - 75px);
+    width: 100%;
+    display: flex;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: none;
+  }
+
+  #destroy-user-confirmation-modal-content {
+    position: absolute;
+    align-items: center;
+    justify-content: center;
+    background-color:rgba(25, 25, 25, 1);
+    margin: 15% 5px 0 5px;
+    padding: 15px;
+    border-radius: 5px;
+    border: 2px solid red;
+  }
+
+  #destroy-user-confirmation-modal-content > form {
+    margin-top: 15px;
+  }
+
+  #destroy-user-buttons-container {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 15px;
+  }
+
+  #confirm-destroy-user-button {
+    background-color: red;
+    padding: 5px 15px 5px 15px;
+    border: none;
+    border-radius: 15px;
+  }
+
+  #cancel-destroy-user-button {
+    background-color:#738ADB;
+    padding: 5px 15px 5px 15px;
+    border: none;
+    border-radius: 15px;
   }
 }

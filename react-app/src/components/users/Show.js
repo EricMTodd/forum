@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react'
 import { Link, useNavigate, useParams } from 'react-router-dom'
 import axios from 'axios'
-import Cookies from 'js-cookie'
 
 const Show = ({
   domain,
@@ -41,10 +40,19 @@ const Show = ({
     .catch(error => console.log(error))
   }
 
+  const toggleDestroyUserConfirmationForm = () => {
+    const modal = document.querySelector('#destroy-user-confirmation-modal-container')
+    if (modal.style.display !== 'flex') {
+      modal.style.display = 'flex'
+    } else {
+      modal.style.display = 'none'
+    }
+  }
+
   return(
     <div className='show-user-container'>
-      <div className='destroy-user-confirmation-modal-container'>
-        <div className='destroy-user-confirmation-modal-content'>
+      <div id='destroy-user-confirmation-modal-container'>
+        <div id='destroy-user-confirmation-modal-content'>
           <h1>WARNING</h1>
           <p>
             You are about to permanently delete your account! All your posts, comments and comments on them will be destroyed as well. If you are sure you would like to do this, please enter your password.
@@ -54,10 +62,10 @@ const Show = ({
               <strong>Password</strong>
             </label>
             <br />
-            <input type='password' id='destroy-user-confirmation-modal-password-input' name='password' value={password} onChange={e => setPassword(e.target.value)} />
-            <div>
+            <input type='password' id='destroy-user-confirmation-modal-password-input' name='password' value={password}  onChange={e => setPassword(e.target.value)} />
+            <div id='destroy-user-buttons-container'>
+              <button type='button' id='cancel-destroy-user-button' onClick={toggleDestroyUserConfirmationForm}>Cancel</button>
               <button type='submit' id='confirm-destroy-user-button' onClick={handleDestroy}>Confirm</button>
-              <button type='button' id='cancel-destroy-user-button'>Cancel</button>
             </div>
           </form>
         </div>
@@ -65,7 +73,7 @@ const Show = ({
       <h1>{user.handle}</h1>
       <div className='user-actions'>
         { loggedIn && currentUser.id === user.id && <Link to={`/users/${user.id}/edit`}>Edit</Link> }
-        { loggedIn && currentUser.id === user.id && <button type='button'>Delete</button> }
+        { loggedIn && currentUser.id === user.id && <button type='button' className='bravo-button' onClick={toggleDestroyUserConfirmationForm}>Delete</button> }
       </div>
       <h2>Posts</h2>
       <div id={`user-${user.id}-posts-container`}>
