@@ -77,7 +77,7 @@ const Show = ({
       </div>
       <h2>Posts</h2>
       <div id={`user-${user.id}-posts-container`}>
-        {posts.map(post => <div key={post.id} id={`post-${post.id}`}><Link to={`/posts/${post.id}`}>{post.title}</Link></div>)}
+        {posts.map(post => <div key={post.id} id={`post-${post.id}`} className='posts-index-card'><Link to={`/posts/${post.id}`}>{post.title}</Link></div>)}
       </div>
     </div>
   )
