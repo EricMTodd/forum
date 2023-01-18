@@ -162,7 +162,6 @@
   #destroy-user-confirmation-modal-container {
     height: calc(100% - 77px);
     width: calc(100% - 10px);
-    display: flex;
     position: absolute;
     background-color: rgba(0, 0, 0, 0.7);
     display: none;
@@ -194,6 +193,7 @@
     padding: 5px 15px 5px 15px;
     border: none;
     border-radius: 15px;
+    width: 33%;
   }
 
   #cancel-destroy-user-button {
@@ -201,5 +201,6 @@
     padding: 5px 15px 5px 15px;
     border: none;
     border-radius: 15px;
+    width: 33%;
   }
 }

@@ -88,6 +88,12 @@
     justify-content: space-between;
     padding: 15px 5px 15px 5px;
     border-radius: 5px;
+    display: flex;
+    align-items: center;
+  }
+
+  .posts-index-card > h1 {
+    margin: none;
   }
 
   .post-title-link {
@@ -103,6 +109,12 @@
     font-size: 18px;
     font-weight: bold;
     width: 100%;
+  }
+
+  .user-posts-container {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
   }
 
   #sessions-links {
@@ -150,5 +162,51 @@
 
   #log-in-form > input, #sign-up-form > input, #new-post-form > input, #new-post-form > textarea {
     margin-bottom: 15px;
+  }
+
+  #destroy-user-confirmation-modal-container {
+    display: none;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.7);
+    height: calc(100% - 77px);
+    width: 100%;
+  }
+
+  #destroy-user-confirmation-modal-content {
+    position: absolute;
+    align-items: center;
+    justify-content: center;
+    background-color:rgba(25, 25, 25, 1);
+    margin-top: 45px;
+    padding: 15px;
+    border-radius: 5px;
+    border: 2px solid red;
+    width: 60%;
+  }
+
+  #destroy-user-confirmation-modal-content > form {
+    margin-top: 15px;
+  }
+
+  #destroy-user-buttons-container {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 15px;
+  }
+
+  #confirm-destroy-user-button {
+    background-color: red;
+    padding: 5px 15px 5px 15px;
+    border: none;
+    border-radius: 15px;
+    width: 33%;
+  }
+
+  #cancel-destroy-user-button {
+    background-color:#738ADB;
+    padding: 5px 15px 5px 15px;
+    border: none;
+    border-radius: 15px;
+    width: 33%;
   }
 }

@@ -76,7 +76,7 @@ const Show = ({
         { loggedIn && currentUser.id === user.id && <button type='button' className='bravo-button' onClick={toggleDestroyUserConfirmationForm}>Delete</button> }
       </div>
       <h2>Posts</h2>
-      <div id={`user-${user.id}-posts-container`}>
+      <div id={`user-${user.id}-posts-container`} className='user-posts-container'>
         {posts.map(post => <div key={post.id} id={`post-${post.id}`} className='posts-index-card'><Link to={`/posts/${post.id}`}>{post.title}</Link></div>)}
       </div>
     </div>
