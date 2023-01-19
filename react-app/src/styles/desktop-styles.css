@@ -1,6 +1,76 @@
 @media screen and (min-width: 900px) {
+  * {
+    color: white;
+    font-family: 'fira sans', arial, sans-serif;
+  }
+
+  html {
+    height: 100vh;
+  }
+
   body {
     margin: 0 auto;
     background-color: black;
+    color: white;
+    height: 100vh;
   }
+
+  nav {
+    height: 49px;
+    background-color: rgba(25, 25, 25, 1);
+    border-bottom: 1px solid rgba(50, 50, 50, 1);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 15px 0 15px;
+  }
+
+  main {
+    height: calc(100vh - 75px);
+    overflow-x: scroll;
+    padding: 0 16.5% 0 16.5%;
+  }
+
+  footer {
+    height: 24px;
+    background-color: rgba(25, 25, 25, 1);
+    border-top: 1px solid rgba(50, 50, 50,1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  .alpha-button {
+    background-color: rgba(100, 100, 100, 1);
+    padding: 5px 8px 5px 8px;
+    border-radius: 15px;
+    border: none;
+  }
+
+  .bravo-button {
+    border: none;
+    background: none;
+  }
+
+  .charlie-button {
+    padding: 8px 0 8px 0;
+    border-radius: 15px;
+    border: none;
+    background-color: #738ADB;
+    font-size: 18px;
+    font-weight: bold;
+    width: 100%;
+  }
+
+  #sessions-links {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  }
+
 }
