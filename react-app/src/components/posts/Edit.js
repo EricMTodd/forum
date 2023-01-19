@@ -25,11 +25,11 @@ const Edit = ({
   return(
     <div className='edit-post-form-container'>
       <form className='edit-post-form'>
-        <label htmlFor='edit-post-body-textarea'>
+        <label htmlFor={`edit-post-${post.id}-body-textarea`}>
           <strong>Edit post body</strong>
         </label>
         <br />
-        <textarea id='edit-post-body-textarea' name='body' value={body} onChange={e => setBody(e.target.value)} />
+        <textarea id={`edit-post-${post.id}-body-textarea`} className='edit-post-body-textarea' name='body' value={body} onChange={e => setBody(e.target.value)} />
         <br />
         <br />
         <button type='submit' className='alpha-button'>Submit</button>

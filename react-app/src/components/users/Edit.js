@@ -32,7 +32,7 @@ const Edit = ({
   }
 
   return(
-    <div className='user-edit-container'>
+    <div className='edit-user-container'>
       <form onSubmit={handleSubmit}>
         <h1>Edit User</h1>
         <label htmlFor='edit-user-handle-input'>
@@ -63,7 +63,7 @@ const Edit = ({
         <input type='password' id='edit-user-password-confirmation-input' name='passwordConfirmation' value={passwordConfirmation} onChange={e => setPasswordConfirmation(e.target.value)} />
         <br />
         <br />
-        <button type='submit'>Submit</button>
+        <button type='submit' className='charlie-button'>Submit</button>
       </form>
     </div>
   )

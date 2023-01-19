@@ -35,6 +35,7 @@
     display: flex;
     flex-direction: column;
     margin: 0 5px 0 5px;
+    overflow-x: scroll;
   }
 
   footer {
@@ -131,6 +132,25 @@
     font-size: 18px;
     font-weight: bold;
     width: 100%;
+  }
+
+  .edit-comment-body-textarea, .new-comment-body-textarea {
+    min-width: 80%;
+  }
+
+  .edit-post-body-textarea {
+    min-width: 98.5%;
+  }
+
+  .edit-user-container {
+    background-color:rgba(25, 25, 25, 1);
+    margin-top: 5px;
+    padding: 15px;
+    border-radius: 5px;
+  }
+
+  .edit-user-container > form > input {
+    min-width: 98.5%;
   }
   
   #app {

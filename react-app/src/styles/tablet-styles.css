@@ -27,6 +27,7 @@
   main {
     height: calc(100vh - 75px);
     margin: 0 16.5% 0 16.5%;
+    overflow-x: scroll;
   }
 
   footer {
@@ -53,7 +54,7 @@
     height: 25px;
   }
 
-    textarea {
+  textarea {
     color: white;
     min-width: 100%;
     max-width: 100%;
@@ -61,6 +62,18 @@
     border-radius: 5px;
     border: 1px solid rgba(100, 100, 100, 1);
     background-color: rgba(50, 50, 50, 1);
+  }
+
+  li {
+    list-style: none;
+    border-left: 2px solid rgba(50, 50, 50, 1);
+    padding-left: 5px;
+    margin-top: 5px;
+  }
+
+  p {
+    margin-bottom: 0px;
+    margin-top: 0px;
   }
 
   .alpha-button {
@@ -115,6 +128,36 @@
     display: flex;
     justify-content: space-between;
     flex-direction: column;
+  }
+
+  .edit-comment-form-container, .new-comment-form-container, .edit-post-form-container {
+    display: none;
+  }
+
+  .show-post-container {
+    background-color: rgba(25, 25, 25, 1);
+    margin-top: 5px;
+    padding: 5px;
+    border-radius: 5px;
+  }
+
+  .edit-comment-body-textarea, .new-comment-body-textarea {
+    min-width: 80%;
+  }
+
+  .edit-post-body-textarea {
+    min-width: 98.5%;
+  }
+
+  .edit-user-container {
+    background-color: rgba( 25, 25, 25, 1);
+    padding: 50px 55px 50px 50px;
+    margin-top: 50px;
+    border-radius: 5px;
+  }
+
+  .edit-user-container > form > input {
+    min-width: 98.5%;
   }
 
   #sessions-links {
@@ -209,4 +252,5 @@
     border-radius: 15px;
     width: 33%;
   }
+
 }

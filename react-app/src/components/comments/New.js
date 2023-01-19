@@ -54,11 +54,11 @@ const New = ({
   return(
     <div className='new-comment-form-container'>
       <form onSubmit={handleSubmit}>
-        <label htmlFor='new-comment-body-textarea'>
+        <label htmlFor={`new-comment-on-post-${post.id}-textarea`}>
           <strong>Comment as {currentUser.handle}</strong>
         </label>
         <br />
-        <textarea id='new-comment-body-textarea' name='body' value={body} onChange={e => setBody(e.target.value)} />
+        <textarea id={`new-comment-on-post-${post.id}-textarea`} className='new-comment-body-textarea' name='body' value={body} onChange={e => setBody(e.target.value)} />
         <br />
         <br />
         <button type='submit'>Submit</button>
